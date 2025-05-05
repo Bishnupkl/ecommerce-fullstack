@@ -10,7 +10,7 @@ let cartItems = cartItemsRaw;
 
 async function start() {
 
-    const url = `mongodb+srv://bishnuateet:Bishnu212@cluster0.bgot9dy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+    const url = process.env.MONGO_URI;
     const client = new MongoClient(url);
     await client.connect();
     const db = client.db('fsv-db');
